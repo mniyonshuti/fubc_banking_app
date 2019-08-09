@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/masterlayout.html}">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Account Types</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div>
+        <h1>List of Bank Account Types</h1>
+
+        <table class="table table-striped" style="width: auto">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Account Type Name</th>
+                <th scope="col">Number of Accounts</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="accounttype, iterStat : ${accounts}">
+                <th scope="row" th:text="${iterStat.count}"></th>
+                <td th:text="${accounttype.accountTypeName}"></td>
+                <td th:text="${accounttype.getAccountList().size()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+</th:block>
+</body>
+</html>

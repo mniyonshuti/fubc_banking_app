@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/masterlayout.html}">
+        <head>
+            <meta charset="UTF-8">
+
+            <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+            <meta charset="UTF-8">
+            <title>Home</title>
+        </head>
+        <body>
+        <th:block layout:fragment="content">
+        <div >
+            <h4>Welcome to Fairfield United Banking Corporation (FUBC)</h4>
+
+            <p>
+                This Ebanking system helps the bank manager to view a list of all the Customers registered in the system ascending
+                order of the Customers’ last names. It allows the bank manager to add a new Customer into the system. It allows the
+                bank manager to view a list of all the Accounts held in the system sorted in ascending order of the Account Number.
+                It allows the bank manager to add/open a new Account for an existing customer in the system. you can also display
+                the bank’s net liquidity position. This value is computed by taking the sum of the Savings and Checking accounts
+                balances minus the sum of the Loan accounts balances. It represents the total amount of cash expected in the bank’s
+                vault.
+            </p>
+
+
+        </div>
+        </th:block>
+</body>
+</html>

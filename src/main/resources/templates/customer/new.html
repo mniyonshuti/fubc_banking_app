@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/masterlayout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Register Customer</title>
+</head>
+<body>
+    <th:block layout:fragment="content">
+        <div>
+    <h1>Register new Customer</h1><p></p>
+
+            <form name="newCustomer" id="newCustomer" method="post" action="/fubc/customer/new" th:object="${customer}">
+                <fieldset>
+                    <div>
+                        <div class="row" style="width: 100%; margin: 1%" >
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customerNumber">Customer Number</label>
+                                    <span th:if="${#fields.hasErrors('customerNumber')}" th:errors="*{customerNumber}"
+                                          class="alert alert-danger"></span>
+                                    <input id="customerNumber" name="customerNumber" type="number" class="form-control" th:value="${customer.customerNumber}"
+                                           placeholder="Customer Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Contact Phone Number</label>
+                                    <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{contactPhoneNumber}"
+                                          class="alert alert-danger"></span>
+                                    <input id="contactPhoneNumber" name="contactPhoneNumber" type="text" class="form-control" th:value="${customer.contactPhoneNumber}"
+                                           placeholder="Contact Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                                          class="alert alert-danger"></span>
+                                    <input id="firstName" name="firstName" type="text" class="form-control" th:value="${customer.firstName}"
+                                           placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="middleName">Middle Name</label>
+                                    <span th:if="${#fields.hasErrors('customerNumber')}" th:errors="*{middleName}"
+                                          class="alert alert-danger"></span>
+                                    <input id="middleName" name="middleName" type="text" class="form-control" th:value="${customer.middleName}"
+                                           placeholder="Middle Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                                          class="alert alert-danger"></span>
+                                    <input id="lastName" name="lastName" type="text" class="form-control" th:value="${customer.lastName}"
+                                           placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Email Address</label>
+                                    <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                                          class="alert alert-danger"></span>
+                                    <input id="emailAddress" name="emailAddress" type="text" class="form-control" th:value="${customer.emailAddress}"
+                                           placeholder="name@abc.com">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Date of Birth</label>
+                                    <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
+                                          class="alert alert-danger"></span>
+                                    <input id="dateOfBirth" name="dateOfBirth" type="date" class="form-control"
+                                           th:value="${customer.dateOfBirth}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:right;">
+                        <a href="/fubc/home" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+                        <button id="btnSubmit" type="submit" class="btn btn-outline-success">Create Customer</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </th:block>
+</body>
+</html>

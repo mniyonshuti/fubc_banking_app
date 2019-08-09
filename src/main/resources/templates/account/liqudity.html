@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/masterlayout.html}">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Liqudity</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div>
+
+        <h3>Liquidity position of the Bank</h3>
+
+        <table class="table table-hover" style="width: auto">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Account Name</th>
+                <th scope="col">Net Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="zinash, iterStat : ${summary}">
+                <th scope="row" th:text="${iterStat.count}"></th>
+                <td th:text="${zinash.getKey()}"></td>
+                <td th:text="${zinash.getValue()}"></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+</th:block>
+</body>
+</html>

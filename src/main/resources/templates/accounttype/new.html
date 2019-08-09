@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/masterlayout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Add Account Type</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <h1>Create new account type</h1><p></p>
+    <div>
+        <form name="newAccountType" id="newAccountType" method="post" action="/fubc/accounttype/new" th:object="${accountType}">
+            <fieldset>
+                <div>
+                    <div class="row" style="width: 60%; margin: 1%" >
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="accountTypeName">Account Type Name</label>
+                                <span th:if="${#fields.hasErrors('accountTypeName')}" th:errors="*{accountTypeName}"
+                                      class="alert alert-danger"></span>
+                                <input id="accountTypeName" name="accountTypeName" type="text" class="form-control" th:value="${accountType.accountTypeName}"
+                                       placeholder="Account Type Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:right; width: 60%">
+                        <a href="/fubc/accounttype/list" class="btn btn-outline-warning" style="float: left">Cancel</a>&nbsp;&nbsp;&nbsp;
+                        <button id="btnSubmit" type="submit" class="btn btn-outline-success">Create Account Type</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</th:block>
+</body>
+</html>

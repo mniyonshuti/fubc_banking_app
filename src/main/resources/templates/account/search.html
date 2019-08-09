@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/masterlayout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Search Customer</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <h1>Enter Customer Number</h1>
+    <p></p>
+    <div>
+        <div class="col-md-6">
+            <div class="form-group">
+        <form class="form-inline my-2 my-lg-0" action="/fubc/account/new">
+            <input class="form-control mr-sm-2" type="text" id="searchCustomer" name="searchCustomer" placeholder="Enter Customer Number">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search Customer</button>
+        </form>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>
